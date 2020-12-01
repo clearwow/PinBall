@@ -13,7 +13,8 @@ public class ScoreControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.scoreText.text = scorePrefix + score.ToString();
+        score = 0;
+        SetScore();
     }
 
     // Update is called once per frame
@@ -40,6 +41,17 @@ public class ScoreControl : MonoBehaviour
        {
            score += 20;
        }
-       scoreText.text = scorePrefix + score.ToString();
+         SetScore();
+    }
+   void SetScore()
+   {
+       scoreText.text = string.Format("Score:{0}", score);
    }
+
+
+
+
+
 }
+
+
